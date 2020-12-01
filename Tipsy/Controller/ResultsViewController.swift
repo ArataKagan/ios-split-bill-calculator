@@ -8,7 +8,9 @@
 
 import UIKit
 
-class resultsViewController: UIViewController {
+class ResultsViewController: UIViewController {
+    
+    var resultsTotal:Float? 
 
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var settingLabel: UILabel!
@@ -16,10 +18,12 @@ class resultsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // totalLabel.text = String(resultsTotal!)
         // Do any additional setup after loading the view.
     }
     
     @IBAction func recalculatedPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
    

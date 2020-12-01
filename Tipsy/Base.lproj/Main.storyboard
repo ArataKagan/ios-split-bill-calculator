@@ -11,7 +11,7 @@
         <!--Calculator View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="calculatorViewController" customModule="Tipsy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CalculatorViewController" customModule="Tipsy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="T0M-56-42h">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -207,7 +207,7 @@
                         <outletCollection property="tipButtons" destination="XzR-0E-Xf7" collectionClass="NSMutableArray" id="MA1-NM-Asa"/>
                         <outletCollection property="tipButtons" destination="7y6-Kf-yF0" collectionClass="NSMutableArray" id="ORg-Y8-KeA"/>
                         <outletCollection property="tipButtons" destination="UtR-dU-EKt" collectionClass="NSMutableArray" id="pye-9s-rAa"/>
-                        <segue destination="Dnf-m2-FPm" kind="presentation" identifier="resultsVC" id="8Ap-KE-61w"/>
+                        <segue destination="Dnf-m2-FPm" kind="presentation" identifier="goToResults" id="8Ap-KE-61w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -217,7 +217,7 @@
         <!--Results View Controller-->
         <scene sceneID="bJV-Cc-sXH">
             <objects>
-                <viewController id="Dnf-m2-FPm" customClass="resultsViewController" customModule="Tipsy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Dnf-m2-FPm" customClass="ResultsViewController" customModule="Tipsy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DNW-gk-FsX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

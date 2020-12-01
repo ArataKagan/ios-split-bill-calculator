@@ -8,7 +8,7 @@
 
 import UIKit
 
-class calculatorViewController: UIViewController {
+class CalculatorViewController: UIViewController {
     
     @IBOutlet weak var billTextField: UITextField!
    
@@ -18,6 +18,7 @@ class calculatorViewController: UIViewController {
     
     var inputValue:Int? = 0
     var tip:Float? = 0.1
+    var splitTotal:Float?
     
     @IBAction func billValueChanged(_ sender: UITextField) {
         billTextField.endEditing(true)
@@ -48,14 +49,20 @@ class calculatorViewController: UIViewController {
         let totalBill = baseBill + tipAmount
        
         let splitNumFloat = Float(splitNumberLabel.text!)!
+        
+        self.performSegue(withIdentifier: "goToResults", sender: self)
       
-        print(totalBill/splitNumFloat)
+        splitTotal = (totalBill/splitNumFloat)
       
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
-       
+        if segue.identifier == "goToResults" {
+            let destinationVC = segue.destination as! ResultsViewController
+            
+            destinationVC.resultsTotal = splitTotal
+        }
         // Pass the selected object to the new view controller.
     }
     
