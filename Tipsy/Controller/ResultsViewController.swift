@@ -10,16 +10,18 @@ import UIKit
 
 class ResultsViewController: UIViewController {
     
-    var resultsTotal:Float? 
+    var resultsTotal:Float?
+    var tipAmount:Float?
+    var partyNum:Float? 
 
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var settingLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // totalLabel.text = String(resultsTotal!)
-        // Do any additional setup after loading the view.
+        
+        totalLabel.text = String(resultsTotal!)
+        settingLabel.text = "Split between \(Int(partyNum!)) people, with \(tipAmount!) tip."
     }
     
     @IBAction func recalculatedPressed(_ sender: UIButton) {

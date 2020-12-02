@@ -19,6 +19,8 @@ class CalculatorViewController: UIViewController {
     var inputValue:Int? = 0
     var tip:Float? = 0.1
     var splitTotal:Float?
+    var partyNum: Float?
+    
     
     @IBAction func billValueChanged(_ sender: UITextField) {
         billTextField.endEditing(true)
@@ -48,11 +50,11 @@ class CalculatorViewController: UIViewController {
         let tipAmount = baseBill * tip!
         let totalBill = baseBill + tipAmount
        
-        let splitNumFloat = Float(splitNumberLabel.text!)!
+        partyNum = Float(splitNumberLabel.text!)!
+        
+        splitTotal = (totalBill/partyNum!)
         
         self.performSegue(withIdentifier: "goToResults", sender: self)
-      
-        splitTotal = (totalBill/splitNumFloat)
       
     }
     
@@ -60,8 +62,9 @@ class CalculatorViewController: UIViewController {
         // Get the new view controller using segue.destination.
         if segue.identifier == "goToResults" {
             let destinationVC = segue.destination as! ResultsViewController
-            
             destinationVC.resultsTotal = splitTotal
+            destinationVC.tipAmount = tip
+            destinationVC.partyNum = partyNum
         }
         // Pass the selected object to the new view controller.
     }
